@@ -1,0 +1,62 @@
+name: 官報RSS生成
+
+on:
+  # schedule:
+  #   - cron: "45 8 * * *" # JST 8:45に実行（UTCでは23:45）
+  workflow_dispatch:
+
+jobs:
+  fetch-kanpo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 官報チェック(DL無し)
+        id: fetch-kanpo-step
+        uses: testkun08080/action-kanpo@main
+        with:
+          dlpdf: "false" # PDFをダウンロードしない
+          # date: "2025-07-03" # 日付を指定する場合はここに入力 ない場合は当日の日付を使用
+    outputs:
+      kanpou_found: ${{ steps.fetch-kanpo-step.outputs.kanpou_found }}
+      pdf_infos: ${{ steps.fetch-kanpo-step.outputs.pdf_infos }}
+
+  show-fetch-kanpo-results:
+    needs: fetch-kanpo
+    runs-on: ubuntu-latest
+    steps:
+      - name: 結果を表示
+        run: |
+          echo "官報取得成功 or 失敗: ${{needs.fetch-kanpo.outputs.kanpou_found}}"
+          echo "取得PDF数: ${{needs.fetch-kanpo.outputs.pdf_infos}}"
+
+  generate-rss-kanpo:
+    needs: fetch-kanpo
+    if: needs.fetch-kanpo.outputs.kanpou_found == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 官報チェック(DLあり)
+        id: fetch-dl-kanpo-step
+        uses: testkun08080/action-kanpo@main
+        with:
+          dlpdf: "true" # PDFをダウンロードする
+          # date: "2025-07-03" # 日付を指定する場合はここに入力 ない場合は当日の日付を使用
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Generate RSS feed
+        run: |
+          python generate_rss.py \
+            "${{ steps.fetch-dl-kanpo-step.outputs.pdf_infos }}"
+
+      - name: 自動コミット
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: 官報用のRSSを生成/更新
+    outputs:
+      kanpou_found: ${{ steps.fetch-dl-kanpo-step.outputs.kanpou_found}}
+      pdf_infos: ${{ steps.fetch-dl-kanpo-step.outputs.pdf_infos }}
