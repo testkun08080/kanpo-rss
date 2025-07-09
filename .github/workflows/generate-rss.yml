@@ -1,8 +1,8 @@
 name: 官報RSS生成
 
 on:
-  # schedule:
-  #   - cron: "45 8 * * *" # JST 8:45に実行（UTCでは23:45）
+  schedule:
+    - cron: "45 8 * * *" # JST 8:45に実行（UTCでは23:45）
   workflow_dispatch:
 
 jobs:
@@ -60,3 +60,16 @@ jobs:
     outputs:
       kanpou_found: ${{ steps.fetch-dl-kanpo-step.outputs.kanpou_found}}
       pdf_infos: ${{ steps.fetch-dl-kanpo-step.outputs.pdf_infos }}
+
+  # tweet:
+  #   name: ツイート送信
+  #   if: needs.fetch-kanpo.outputs.kanpou_found == 'true'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: noweh/post-tweet-v2-action@v1.0
+  #       with:
+  #         message: "今日の官報！ #官報"
+  #         consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+  #         consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+  #         access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  #         access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
