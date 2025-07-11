@@ -11,24 +11,62 @@ import json
 from datetime import datetime, timezone
 import logging
 
+import re
+import requests
+
+
+def shorten_url(url):
+    """短縮URL作成
+
+    Args:
+        url (str): URL文字列
+
+    Returns:
+        str: 短縮された文字列
+    """
+    try:
+        response = requests.get("http://tinyurl.com/api-create.php", params={"url": url}, timeout=5)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        print(f"❌ URL短縮に失敗: {e}")
+        return url  # 元のURLを返す
+
+
+def clean_title_string(title):
+    """万が一、ページタイトルに余分な空白などが入っていた場合に備えて、文字列を綺麗にします
+
+    Args:
+        title (str): タイトル名
+
+    Returns:
+        str: 空白や括弧を排除した文字列
+    """
+    temp = re.sub(r"\s+|[\u200b]", "", title)  # 空白文字とゼロ幅スペースを除去
+    temp = temp.replace("(", "").replace(")", "")  # 丸括弧を削除
+    return temp
+
 
 def make_item(pdf_info):
     """PDF情報からRSSアイテムを生成し、JSONファイルに保存する関数
 
     Args:
-        pdf_info (list): リスト型のPDF情報。各要素は辞書型で、以下のキーを含む必要があります。
+        pdf_info (dict): 辞書型のPDF情報。辞書型で、以下のキーを含む必要があります。
             - "name": PDFの名前
             - "url": PDFのURL
-            - "description": 官報の説明（オプション）
     """
 
-    date = datetime.now(timezone.utc).strftime("%Y-%m-%d-%H:%M:%S")
+    title = pdf_info["name"]
+    date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S GMT")
+
+    short_url = shorten_url(pdf_info["url"])
+
     new_item = {
-        "title": pdf_info["name"],
+        "title": title,
         "link": pdf_info["url"],
         "pub_date": date,
         "author": "https://www.kanpo.go.jp",
-        "description": pdf_info.get("description", "官報が公開されました"),
+        "description": f"{title}が公開されました。リンク:{short_url}",
     }
 
     json_path = "rss_data.json"
@@ -52,6 +90,7 @@ def make_item(pdf_info):
     <guid isPermaLink="true">{link}</guid>
     <pubDate>{pub_date}</pubDate>
     <dc:creator>{author}</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
     </item>
     """
 
@@ -66,7 +105,7 @@ def make_item(pdf_info):
         xmlns:atom="http://www.w3.org/2005/Atom">
 
     <channel>
-    <title><![CDATA[ 官報RSSフィード ]]></title>
+    <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
     <link>https://www.kanpo.go.jp</link>
     <description>これは官報の非公式更新通知RSSです。基本的に毎日8:45分ごろに更新内容を確認して、RSSをプッシュします/</description>
     <generator>testkun08080</generator>
@@ -75,7 +114,7 @@ def make_item(pdf_info):
     <language>ja</language>
     <image>
         <url>https://upload.wikimedia.org/wikipedia/commons/8/80/GoJ_logo.png</url>
-        <title><![CDATA[ 官報RSSフィード ]]></title>
+        <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
         <link>https://www.kanpo.go.jp</link>
     </image>
     {items_xml}
@@ -95,17 +134,13 @@ def make_item(pdf_info):
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
         logging.error("引数が不足しています。")
+        logging.error("PDF情報を載せたリストを引数として第一引数に必要があります")
         sys.exit(1)
 
     try:
         pdf_list = ast.literal_eval(sys.argv[1])  # 文字列をリストに変換
 
-        for item in pdf_list:
-            print(f"📄 名前: {item['name']}")
-            print(f"🔗 URL: {item['url']}")
-            print(f"📁 ファイル名: {item['filename']}")
-            print("---")
-    except Exception:
+    except (ValueError, SyntaxError):
         logging.error("引数が読み込めませんでした。")
         sys.exit(1)
 

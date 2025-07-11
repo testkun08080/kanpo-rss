@@ -2,7 +2,7 @@ name: 官報RSS生成
 
 on:
   schedule:
-    - cron: "45 23 * * *" # 毎日8:45 JST
+    - cron: "35 23 * * *" # JST 8:35 に実行
   workflow_dispatch:
 
 jobs:
