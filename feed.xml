@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss version="2.0"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+    <title><![CDATA[ 官報RSSフィード ]]></title>
+    <link>https://www.kanpo.go.jp</link>
+    <description>これは官報の非公式更新通知RSSです。基本的に毎日8:45分ごろに更新内容を確認して、RSSをプッシュします/</description>
+    <generator>testkun08080</generator>
+    <lastBuildDate>2025-07-11-10:15:26</lastBuildDate>
+    <atom:link href="https://testkun08080.github.io/action-kanpo/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>ja</language>
+    <image>
+        <url>https://upload.wikimedia.org/wikipedia/commons/8/80/GoJ_logo.png</url>
+        <title><![CDATA[ 官報RSSフィード ]]></title>
+        <link>https://www.kanpo.go.jp</link>
+    </image>
+    
+    <item>
+    <title><![CDATA[令和7年7月11日（本紙　第1505号）]]></title>
+    <description><![CDATA[官報が公開されました]]></description>
+    <link>https://www.kanpo.go.jp/20250711/20250711h01505/pdf/20250711h01505full00010032.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250711/20250711h01505/pdf/20250711h01505full00010032.pdf</guid>
+    <pubDate>2025-07-11-10:15:26</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月11日（号外　第160号）]]></title>
+    <description><![CDATA[官報が公開されました]]></description>
+    <link>https://www.kanpo.go.jp/20250711/20250711g00160/pdf/20250711g00160full00010104.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250711/20250711g00160/pdf/20250711g00160full00010104.pdf</guid>
+    <pubDate>2025-07-11-10:15:26</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月11日（政府調達　第128号）]]></title>
+    <description><![CDATA[官報が公開されました]]></description>
+    <link>https://www.kanpo.go.jp/20250711/20250711c00128/pdf/20250711c00128full00010080.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250711/20250711c00128/pdf/20250711c00128full00010080.pdf</guid>
+    <pubDate>2025-07-11-10:15:26</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    </item>
+    
+    </channel>
+    </rss>
+    
