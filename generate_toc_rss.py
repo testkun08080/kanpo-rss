@@ -113,7 +113,7 @@ def make_item(page_title, toc_info):
     """
 
     # フィード用ファイルへ書き込み
-    with open("feed_details.xml", "w", encoding="utf-8") as f:
+    with open("feed_toc.xml", "w", encoding="utf-8") as f:
         f.write(rss_template)
 
     # 記録用jsonファイルへ書き込み
