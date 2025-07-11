@@ -5,9 +5,11 @@ RSSフィードを生成するスクリプト
 生成されたRSSフィードは、`feed.xml`というファイルに保存されます。
 """
 
+import ast
 import sys
 import json
 from datetime import datetime, timezone
+import logging
 
 
 def make_item(pdf_info):
@@ -81,25 +83,33 @@ def make_item(pdf_info):
     </rss>
     """
 
+    # フィード用ファイルへ書き込み
     with open("feed.xml", "w", encoding="utf-8") as f:
         f.write(rss_template)
 
+    # 記録用jsonファイルへ書き込み
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print("引数が不足しています。")
+        logging.error("引数が不足しています。")
         sys.exit(1)
 
     try:
-        pdf_list = json.loads(sys.argv[1])
-    except json.JSONDecodeError:
-        print("引数が読み込めませんでした。")
+        pdf_list = ast.literal_eval(sys.argv[1])  # 文字列をリストに変換
+
+        for item in pdf_list:
+            print(f"📄 名前: {item['name']}")
+            print(f"🔗 URL: {item['url']}")
+            print(f"📁 ファイル名: {item['filename']}")
+            print("---")
+    except Exception:
+        logging.error("引数が読み込めませんでした。")
         sys.exit(1)
 
     for pdf_info in pdf_list:
         make_item(pdf_info)
 
-    print("RSSフィードが更新されました")
+    logging.info("RSSフィードが更新されました")
