@@ -63,10 +63,39 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: 官報用のRSSを生成/更新
-    outputs:
-      kanpo_found: ${{ steps.fetch-dl-kanpo-step.outputs.kanpo_found}}
-      pdf_infos: ${{ steps.fetch-dl-kanpo-step.outputs.pdf_infos }}
-      toc_infos: ${{ steps.fetch-dl-kanpo-step.outputs.toc_infos }}
+
+  generate-toc-rss-kanpo:
+    needs: fetch-kanpo
+    if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 官報チェック(DLあり)
+        id: fetch-dl-kanpo-step
+        uses: testkun08080/action-kanpo@main
+        with:
+          dlpdf: "true" # PDFをダウンロードする
+          # date: "2025-07-03" # 日付を指定する場合はここに入力 ない場合は当日の日付を使用
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests python-dateutil
+
+      - name: Generate RSS feed
+        run: |
+          python generate_toc_rss.py \
+            "${{ steps.fetch-dl-kanpo-step.outputs.toc_infos }}"
+
+      - name: 自動コミット
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: 官報目次リンク毎のRSSを生成/更新
 
   # tweet:
   #   name: ツイート送信
