@@ -12,10 +12,10 @@ GitHub Actions を使って自動的に生成・公開するRSSフィードを�
 
 以下のRSSフィードURLを、お好きなRSSリーダーに登録してください：
 
-[![RSS Feed](https://img.shields.io/badge/RSS-Subscribe-orange?logo=rss)](https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml)
+[![RSS Feed](https://img.shields.io/badge/RSS-Subscribe-orange?logo=rss)](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
 
 📥 **RSS URL:**  
-[`https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml)
+[`https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
 
 ### ローカルテスト
 - このリポジトリをクローン後、以下コマンドでテストできるはずです。
