@@ -12,10 +12,19 @@ GitHub Actions を使って自動的に生成・公開するRSSフィードを�
 
 以下のRSSフィードURLを、お好きなRSSリーダーに登録してください：
 
-[![RSS Feed](https://img.shields.io/badge/RSS-Subscribe-orange?logo=rss)](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
+- 発行されたページ毎のRSS(簡易版)
+  [![RSS Feed](https://img.shields.io/badge/RSS-Subscribe-orange?logo=rss)](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
 
-📥 **RSS URL:**  
-[`https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
+  📥 **RSS URL:**
+  [`https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml)
+
+- 発行されたページの各リンク（目次）ごとに分かれたRSS(詳細版)
+  [![RSS Feed](https://img.shields.io/badge/RSS-Subscribe-orange?logo=rss)](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed_toc.xml)
+
+    📥 **RSS URL:**
+  [`https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed_toc.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed_toc.xml)
+  
+
 
 ### ローカルテスト
 - PDF情報から大まかなページのみの更新のRSSを作成するには、以下コマンドでテストできるはずです。
