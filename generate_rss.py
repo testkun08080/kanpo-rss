@@ -60,15 +60,16 @@ def make_item(pdf_info):
     title = pdf_info["name"]
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S GMT")
 
-    short_url = shorten_url(pdf_info["url"])
+    # short_url = shorten_url(pdf_info["url"])
+    link_url = pdf_info["url"]
     logo_icon = "https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png"
 
     new_item = {
         "title": title,
-        "link": pdf_info["url"],
+        "link": link_url,
         "pub_date": date,
         "author": "https://www.kanpo.go.jp",
-        "description": f"{title}が発行されました。\nリンクはこちら:{short_url}",
+        "description": f"{title}が発行されました。\nリンクはこちら:{link_url}",
         "logo_icon": logo_icon,
     }
 
@@ -102,7 +103,7 @@ def make_item(pdf_info):
     # if not any(item["link"] == new_item["link"] for item in data):
     #     data.append(new_item)
 
-    data = sorted(data, key=lambda x: x["pub_date"], reverse=True)
+    # data = sorted(data, key=lambda x: x["pub_date"], reverse=True)
 
     item_template = """
     <item>
