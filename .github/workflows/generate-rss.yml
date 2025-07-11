@@ -50,6 +50,10 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install dependencies
+        run: |
+          pip install requests
+
       - name: Generate RSS feed
         run: |
           python generate_rss.py \
