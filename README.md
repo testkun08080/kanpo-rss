@@ -17,6 +17,13 @@ GitHub Actions を使って自動的に生成・公開するRSSフィードを�
 📥 **RSS URL:**  
 [`https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml`](https://raw.githubusercontent.com/testkun08080/kanpo-rss/main/feed.xml)
 
+### ローカルテスト
+- このリポジトリをクローン後、以下コマンドでテストできるはずです。
+  ```zsh
+  python generate_rss.py \
+    "[{'url': 'https://www.kanpo.go.jp/20250711/20250711h01505/pdf/20250711h01505full00010032.pdf', 'name': '令和7年7月11日（本紙\u3000第1505号）', 'filename': '20250711h01505full00010032.pdf'}, {'url': 'https://www.kanpo.go.jp/20250711/20250711g00160/pdf/20250711g00160full00010104.pdf', 'name': '令和7年7月11日（号外\u3000第160号）', 'filename': '20250711g00160full00010104.pdf'}, {'url': 'https://www.kanpo.go.jp/20250711/20250711c00128/pdf/20250711c00128full00010080.pdf', 'name': '令和7年7月11日（政府調達\u3000第128号）', 'filename': '20250711c00128full00010080.pdf'}]"
+  ```
+
 ---
 
 ## 💬 補足
