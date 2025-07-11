@@ -13,6 +13,7 @@ import logging
 
 import re
 import requests
+from dateutil import parser as date_parser
 
 
 def shorten_url(url):
@@ -67,7 +68,7 @@ def make_item(pdf_info):
         "link": pdf_info["url"],
         "pub_date": date,
         "author": "https://www.kanpo.go.jp",
-        "description": f"{title}が公開されました。リンク:{short_url}",
+        "description": f"{title}が発行されました。\nリンクはこちら:{short_url}",
         "logo_icon": logo_icon,
     }
 
@@ -79,8 +80,27 @@ def make_item(pdf_info):
     except FileNotFoundError:
         data = []
 
-    if not any(item["link"] == new_item["link"] for item in data):
+    # 既存の同一リンクのアイテムを探す
+    existing_item = next((item for item in data if item["link"] == new_item["link"]), None)
+
+    if existing_item:
+        # pub_date を比較し、新しければ上書き
+        existing_date = date_parser.parse(existing_item.get("pub_date", "1970-01-01"))
+        new_date = date_parser.parse(new_item["pub_date"])
+
+        if new_date > existing_date:
+            data.remove(existing_item)
+            data.append(new_item)
+            logging.info(f"🆕 更新されたRSSアイテムを上書きしました: {new_item['title']}")
+        else:
+            logging.info(f"⏸ 既存のRSSアイテムの方が新しいか同じためスキップ: {new_item['title']}")
+    else:
+        # なければ追加
         data.append(new_item)
+        logging.info(f"➕ 新しいRSSアイテムを追加しました: {new_item['title']}")
+
+    # if not any(item["link"] == new_item["link"] for item in data):
+    #     data.append(new_item)
 
     data = sorted(data, key=lambda x: x["pub_date"], reverse=True)
 

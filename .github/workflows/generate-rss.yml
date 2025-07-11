@@ -52,7 +52,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests python-dateutil
 
       - name: Generate RSS feed
         run: |
