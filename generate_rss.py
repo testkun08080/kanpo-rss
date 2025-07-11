@@ -60,6 +60,7 @@ def make_item(pdf_info):
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S GMT")
 
     short_url = shorten_url(pdf_info["url"])
+    logo_icon = "https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png"
 
     new_item = {
         "title": title,
@@ -67,6 +68,7 @@ def make_item(pdf_info):
         "pub_date": date,
         "author": "https://www.kanpo.go.jp",
         "description": f"{title}が公開されました。リンク:{short_url}",
+        "logo_icon": logo_icon,
     }
 
     json_path = "rss_data.json"
@@ -90,7 +92,7 @@ def make_item(pdf_info):
     <guid isPermaLink="true">{link}</guid>
     <pubDate>{pub_date}</pubDate>
     <dc:creator>{author}</dc:creator>
-    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    <enclosure url="{logo_icon}" length="0" type="image/png"/>
     </item>
     """
 
@@ -107,13 +109,13 @@ def make_item(pdf_info):
     <channel>
     <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
     <link>https://www.kanpo.go.jp</link>
-    <description>これは官報の非公式更新通知RSSです。基本的に毎日8:45分ごろに更新内容を確認して、RSSをプッシュします/</description>
+    <description>これは官報の非公式更新通知RSSです。基本的に毎日8:35分ごろに更新内容を確認して、RSSをプッシュします/</description>
     <generator>testkun08080</generator>
     <lastBuildDate>{date}</lastBuildDate>
     <atom:link href="https://testkun08080.github.io/action-kanpo/feed.xml" rel="self" type="application/rss+xml"/>
     <language>ja</language>
     <image>
-        <url>https://upload.wikimedia.org/wikipedia/commons/8/80/GoJ_logo.png</url>
+        <url>{logo_icon}</url>
         <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
         <link>https://www.kanpo.go.jp</link>
     </image>
