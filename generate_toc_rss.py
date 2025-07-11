@@ -128,7 +128,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        toc_list = ast.literal_eval(sys.argv[2])  # 文字列をリストに変換
+        toc_list = ast.literal_eval(sys.argv[1])  # 文字列をリストに変換
 
     except (ValueError, SyntaxError):
         logging.error("引数が読み込めませんでした。")
