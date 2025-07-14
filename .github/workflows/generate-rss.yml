@@ -56,7 +56,8 @@ jobs:
           commit_message: 官報用のRSSを生成/更新
 
   generate-toc-rss-kanpo:
-    needs: generate-rss-kanpo
+    needs: [fetch-kanpo, generate-rss-kanpo]
+    if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
