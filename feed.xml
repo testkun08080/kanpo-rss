@@ -9,7 +9,7 @@
     <link>https://www.kanpo.go.jp</link>
     <description>これは官報の非公式更新通知RSSです。基本的に毎日8:35分ごろに更新内容を確認して、RSSをプッシュします/</description>
     <generator>testkun08080</generator>
-    <lastBuildDate>2025-07-14 07:49:48 GMT</lastBuildDate>
+    <lastBuildDate>2025-07-14 07:55:02 GMT</lastBuildDate>
     <atom:link href="https://testkun08080.github.io/action-kanpo/feed.xml" rel="self" type="application/rss+xml"/>
     <language>ja</language>
     <image>
@@ -57,7 +57,7 @@
 リンクはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/pdf/20250714h01506full00010032.pdf]]></description>
     <link>https://www.kanpo.go.jp/20250714/20250714h01506/pdf/20250714h01506full00010032.pdf</link>
     <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/pdf/20250714h01506full00010032.pdf</guid>
-    <pubDate>2025-07-14 07:49:48 GMT</pubDate>
+    <pubDate>2025-07-14 07:55:02 GMT</pubDate>
     <dc:creator>https://www.kanpo.go.jp</dc:creator>
     <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
     </item>
@@ -68,7 +68,7 @@
 リンクはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/pdf/20250714g00161full00010160.pdf]]></description>
     <link>https://www.kanpo.go.jp/20250714/20250714g00161/pdf/20250714g00161full00010160.pdf</link>
     <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/pdf/20250714g00161full00010160.pdf</guid>
-    <pubDate>2025-07-14 07:49:48 GMT</pubDate>
+    <pubDate>2025-07-14 07:55:02 GMT</pubDate>
     <dc:creator>https://www.kanpo.go.jp</dc:creator>
     <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
     </item>
@@ -79,7 +79,7 @@
 リンクはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/pdf/20250714c00129full00010040.pdf]]></description>
     <link>https://www.kanpo.go.jp/20250714/20250714c00129/pdf/20250714c00129full00010040.pdf</link>
     <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/pdf/20250714c00129full00010040.pdf</guid>
-    <pubDate>2025-07-14 07:49:48 GMT</pubDate>
+    <pubDate>2025-07-14 07:55:02 GMT</pubDate>
     <dc:creator>https://www.kanpo.go.jp</dc:creator>
     <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
     </item>
