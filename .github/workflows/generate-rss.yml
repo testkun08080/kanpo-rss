@@ -47,13 +47,20 @@ jobs:
 
       - name: Generate RSS feed
         run: |
-          python generate_rss.py \
-            "${{ needs.fetch-kanpo.outputs.pdf_infos }}"
+          python generate_rss.py "${{ needs.fetch-kanpo.outputs.pdf_infos }}"
+
+      - name: Upload RSS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rss-files
+          path: |
+            rss/
+            kanpo/
 
   generate-toc-rss-kanpo:
-    needs: [fetch-kanpo, generate-rss-kanpo]
-    if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
+    needs: generate-rss-kanpo
     runs-on: ubuntu-latest
+    if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
     steps:
       - uses: actions/checkout@v4
 
@@ -65,27 +72,45 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dateutil
 
-      - name: Generate RSS feed
+      - name: Generate TOC RSS feed
         run: |
-          python generate_toc_rss.py \
-            "${{ needs.fetch-kanpo.outputs.toc_infos }}"
+          python generate_toc_rss.py "${{ needs.fetch-kanpo.outputs.toc_infos }}"
+
+      - name: Upload TOC RSS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: toc-rss-files
+          path: |
+            toc-rss/
 
   commit-all:
-    needs: [generate-rss-kanpo, generate-toc-rss-kanpo]
+    needs: [generate-toc-rss-kanpo]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Pull latest changes
-      #   run: |
-      #     git config --global user.name "testkun08080"
-      #     git config --global user.email "154046906+testkun08080@users.noreply.github.com"
-      #     git pull origin main --rebase || true
+      - name: Download RSS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: rss-files
+          path: .
+
+      - name: Download TOC RSS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: toc-rss-files
+          path: .
+
+      - name: Git config and pull
+        run: |
+          git config --global user.name "testkun08080"
+          git config --global user.email "154046906+testkun08080@users.noreply.github.com"
+          git pull origin main --rebase || true
 
       - name: Commit and Push all RSS updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "RSSを更新"
+          commit_message: "RSS自動更新"
 
   # tweet:
   #   name: ツイート送信
