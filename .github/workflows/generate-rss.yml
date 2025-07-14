@@ -50,11 +50,6 @@ jobs:
           python generate_rss.py \
             "${{ needs.fetch-kanpo.outputs.pdf_infos }}"
 
-      - name: 自動コミット
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 官報用のRSSを生成/更新
-
   generate-toc-rss-kanpo:
     needs: [fetch-kanpo, generate-rss-kanpo]
     if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
@@ -75,10 +70,22 @@ jobs:
           python generate_toc_rss.py \
             "${{ needs.fetch-kanpo.outputs.toc_infos }}"
 
-      - name: 自動コミット
+  commit-all:
+    needs: [generate-rss-kanpo, generate-toc-rss-kanpo]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # - name: Pull latest changes
+      #   run: |
+      #     git config --global user.name "testkun08080"
+      #     git config --global user.email "154046906+testkun08080@users.noreply.github.com"
+      #     git pull origin main --rebase || true
+
+      - name: Commit and Push all RSS updates
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 官報目次リンク毎のRSSを生成/更新
+          commit_message: "RSSを更新"
 
   # tweet:
   #   name: ツイート送信
