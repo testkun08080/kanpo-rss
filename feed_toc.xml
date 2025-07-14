@@ -9,7 +9,7 @@
     <link>https://www.kanpo.go.jp</link>
     <description>これは官報の非公式更新通知RSS（目次別）です。基本的に毎日8:35分ごろに更新内容を確認して、RSSをプッシュします/</description>
     <generator>testkun08080</generator>
-    <lastBuildDate>2025-07-11 17:46:34 GMT</lastBuildDate>
+    <lastBuildDate>2025-07-14 08:45:08 GMT</lastBuildDate>
     <atom:link href="https://testkun08080.github.io/action-kanpo/feed_toc.xml" rel="self" type="application/rss+xml"/>
     <language>ja</language>
     <image>
@@ -17,6 +17,259 @@
         <title><![CDATA[ 官報RSS目次別(非公式)フィード ]]></title>
         <link>https://www.kanpo.go.jp</link>
     </image>
+    
+    <item>
+    <title><![CDATA[組換えＤＮＡ技術応用食品及び添加物の安全性審査を経た生物の公表を行う件（内閣府一〇九）]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+組換えＤＮＡ技術応用食品及び添加物の安全性審査を経た生物の公表を行う件（内閣府一〇九）についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060001f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060001f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060001f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[登録調査機関の調査業務を行う事務所の所在地を変更する件（特許庁四）]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+登録調査機関の調査業務を行う事務所の所在地を変更する件（特許庁四）についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060002f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060002f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060002f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[砂防法第二条の土地を指定する件（国土交通五二五～五二八）]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+砂防法第二条の土地を指定する件（国土交通五二五～五二八）についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060003f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060003f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060003f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[道路に関する件（関東地方整備局一六七）]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+道路に関する件（関東地方整備局一六七）についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060004f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060004f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060004f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[叙位・叙勲]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+叙位・叙勲についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060005f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060005f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060005f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[皇室事項]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+皇室事項についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060006f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060006f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060006f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[国土調査の成果の認証の公告（国土交通省）]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+国土調査の成果の認証の公告（国土交通省）についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060007f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060007f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060007f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[企業年金基金解散・清算人就任関係]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+企業年金基金解散・清算人就任関係についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060028f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060028f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060028f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[会社その他]]></title>
+    <description><![CDATA[令和7年7月14日（本紙　第1506号）が発行されました。
+会社その他についてはこちら:https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060029f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060029f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714h01506/20250714h015060029f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[ガス事業法施行規則等の一部を改正する省令（経済産業五五）]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+ガス事業法施行規則等の一部を改正する省令（経済産業五五）についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610001f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610001f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610001f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[合成メタン等調達費の額の承認に係る基準（経済産業一一〇）]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+合成メタン等調達費の額の承認に係る基準（経済産業一一〇）についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610061f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610061f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610061f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[エネルギー供給事業者によるエネルギー源の環境適合利用及び化石エネルギー原料の有効な利用の促進に関する基本方針等の一部を改正する告示（同一一一）]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+エネルギー供給事業者によるエネルギー源の環境適合利用及び化石エネルギー原料の有効な利用の促進に関する基本方針等の一部を改正する告示（同一一一）についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610062f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610062f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610062f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[破産、免責、再生関係]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+破産、免責、再生関係についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610065f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610065f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610065f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[土地家屋調査士名簿登録等、弁理士登録、公立学校共済組合決算関係]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+土地家屋調査士名簿登録等、弁理士登録、公立学校共済組合決算関係についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610104f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610104f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610104f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[行旅死亡人関係]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+行旅死亡人関係についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610106f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610106f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610106f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[会社決算公告]]></title>
+    <description><![CDATA[令和7年7月14日（号外　第161号）が発行されました。
+会社決算公告についてはこちら:https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610109f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610109f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714g00161/20250714g001610109f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[入札公告]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+入札公告についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290001f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290001f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290001f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[入札公告（建設工事）]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+入札公告（建設工事）についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290025f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290025f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290025f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[公募型競争入札方式に係る手続開始の公示（建築のためのサービスその他の技術的サービス（建設工事を除く））]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+公募型競争入札方式に係る手続開始の公示（建築のためのサービスその他の技術的サービス（建設工事を除く））についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290031f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290031f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290031f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[公募型プロポーザル方式に係る手続開始の公示（建築のためのサービスその他の技術的サービス（建設工事を除く））]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+公募型プロポーザル方式に係る手続開始の公示（建築のためのサービスその他の技術的サービス（建設工事を除く））についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290033f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290033f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290033f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[資料提供招請に関する公表]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+資料提供招請に関する公表についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290034f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290034f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290034f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[意見招請に関する公示]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+意見招請に関する公示についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290035f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290035f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290035f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[随意契約に関する公示]]></title>
+    <description><![CDATA[令和7年7月14日（政府調達　第129号）が発行されました。
+随意契約に関する公示についてはこちら:https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290036f.html]]></description>
+    <link>https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290036f.html</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250714/20250714c00129/20250714c001290036f.html</guid>
+    <pubDate>2025-07-14 08:45:08 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
     
     <item>
     <title><![CDATA[地方自治法第二百九十一条の三第一項の規定により広域連合の規約変更を許可した件（総務二五七）]]></title>
