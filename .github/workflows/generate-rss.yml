@@ -50,12 +50,6 @@ jobs:
           python generate_rss.py \
             "${{ needs.fetch-kanpo.outputs.pdf_infos }}"
 
-      - name: Pull latest changes
-        run: |
-          git config --global user.name "testkun08080"
-          git config --global user.email "154046906+testkun08080@users.noreply.github.com"
-          git pull origin main --rebase
-
       - name: 自動コミット
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -79,12 +73,6 @@ jobs:
         run: |
           python generate_toc_rss.py \
             "${{ needs.fetch-kanpo.outputs.toc_infos }}"
-
-      - name: Pull latest changes
-        run: |
-          git config --global user.name "testkun08080"
-          git config --global user.email "154046906+testkun08080@users.noreply.github.com"
-          git pull origin main --rebase
 
       - name: 自動コミット
         uses: stefanzweifel/git-auto-commit-action@v5
