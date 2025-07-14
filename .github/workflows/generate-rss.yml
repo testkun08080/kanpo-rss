@@ -113,15 +113,16 @@ jobs:
         with:
           commit_message: "RSS自動更新"
 
-  # tweet:
-  #   name: ツイート送信
-  #   if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
+  # rss-tweet:
+  #   needs: commit-all
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - uses: noweh/post-tweet-v2-action@v1.0
+  #     - uses: azu/rss-to-twitter@v2
   #       with:
-  #         message: "今日の官報！ #官報"
-  #         consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
-  #         consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-  #         access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-  #         access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+  #         RSS_URL: "https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/feed.xml"
+  #         TWEET_TEMPLATE: '%desc%'
+  #         UPDATE_WITHIN_MINUTES: 1440 # post items that are published within 24h
+  #         TWITTER_APIKEY: ${{ secrets.TWITTER_APIKEY }}
+  #         TWITTER_APIKEY_SECRET: ${{ secrets.TWITTER_APIKEY_SECRET }}
+  #         TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  #         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
