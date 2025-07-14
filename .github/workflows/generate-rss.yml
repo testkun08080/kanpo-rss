@@ -14,8 +14,7 @@ jobs:
         id: fetch-kanpo-step
         uses: testkun08080/action-kanpo@main
         with:
-          dlpdf: "false" # PDFをダウンロードしない
-          # date: "2025-07-03" # 日付を指定する場合はここに入力 ない場合は当日の日付を使用
+          dlpdf: "false"
     outputs:
       kanpo_found: ${{ steps.fetch-kanpo-step.outputs.kanpo_found }}
       pdf_infos: ${{ steps.fetch-kanpo-step.outputs.pdf_infos }}
@@ -27,9 +26,9 @@ jobs:
     steps:
       - name: 結果を表示
         run: |
-          echo "官報取得成功 or 失敗: ${{needs.fetch-kanpo.outputs.kanpo_found}}"
-          echo "取得PDF情報: ${{needs.fetch-kanpo.outputs.pdf_infos}}"
-          echo "取得目次情報: ${{needs.fetch-kanpo.outputs.toc_infos}}"
+          echo "官報取得成功 or 失敗: ${{ needs.fetch-kanpo.outputs.kanpo_found }}"
+          echo "取得PDF情報: ${{ needs.fetch-kanpo.outputs.pdf_infos }}"
+          echo "取得目次情報: ${{ needs.fetch-kanpo.outputs.toc_infos }}"
 
   generate-rss-kanpo:
     needs: fetch-kanpo
@@ -44,13 +43,18 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install requests python-dateutil
+        run: pip install requests python-dateutil
 
       - name: Generate RSS feed
         run: |
           python generate_rss.py \
             "${{ needs.fetch-kanpo.outputs.pdf_infos }}"
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.name "testkun08080"
+          git config --global user.email "154046906+testkun08080@users.noreply.github.com"
+          git pull origin main --rebase
 
       - name: 自動コミット
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -58,8 +62,7 @@ jobs:
           commit_message: 官報用のRSSを生成/更新
 
   generate-toc-rss-kanpo:
-    needs: fetch-kanpo
-    if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
+    needs: generate-rss-kanpo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -70,13 +73,18 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install requests python-dateutil
+        run: pip install requests python-dateutil
 
       - name: Generate RSS feed
         run: |
           python generate_toc_rss.py \
             "${{ needs.fetch-kanpo.outputs.toc_infos }}"
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.name "testkun08080"
+          git config --global user.email "154046906+testkun08080@users.noreply.github.com"
+          git pull origin main --rebase
 
       - name: 自動コミット
         uses: stefanzweifel/git-auto-commit-action@v5
