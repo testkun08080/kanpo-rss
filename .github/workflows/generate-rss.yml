@@ -54,8 +54,8 @@ jobs:
         with:
           name: rss-files
           path: |
-            rss/
-            kanpo/
+            feed.xml
+            rss_data.json
 
   generate-toc-rss-kanpo:
     needs: [fetch-kanpo, generate-rss-kanpo]
@@ -81,7 +81,8 @@ jobs:
         with:
           name: toc-rss-files
           path: |
-            toc-rss/
+            feed_toc.xml
+            rss_toc_data.json
 
   commit-all:
     needs: [generate-rss-kanpo, generate-toc-rss-kanpo]
