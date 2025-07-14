@@ -103,7 +103,7 @@ def make_item(pdf_info):
     # if not any(item["link"] == new_item["link"] for item in data):
     #     data.append(new_item)
 
-    # data = sorted(data, key=lambda x: x["pub_date"], reverse=True)
+    data = sorted(data, key=lambda x: x["pub_date"], reverse=True)
 
     item_template = """
     <item>
