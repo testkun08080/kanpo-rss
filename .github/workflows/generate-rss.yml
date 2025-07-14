@@ -58,7 +58,7 @@ jobs:
             kanpo/
 
   generate-toc-rss-kanpo:
-    needs: generate-rss-kanpo
+    needs: [fetch-kanpo, generate-rss-kanpo]
     runs-on: ubuntu-latest
     if: needs.fetch-kanpo.outputs.kanpo_found == 'true'
     steps:
@@ -84,7 +84,7 @@ jobs:
             toc-rss/
 
   commit-all:
-    needs: [generate-toc-rss-kanpo]
+    needs: [generate-rss-kanpo, generate-toc-rss-kanpo]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
