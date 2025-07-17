@@ -9,7 +9,7 @@
     <link>https://www.kanpo.go.jp</link>
     <description>これは官報の非公式更新通知RSSです。基本的に毎日8:35分ごろに更新内容を確認して、RSSをプッシュします/</description>
     <generator>testkun08080</generator>
-    <lastBuildDate>2025-07-16 23:47:25 GMT</lastBuildDate>
+    <lastBuildDate>2025-07-17 23:47:43 GMT</lastBuildDate>
     <atom:link href="https://testkun08080.github.io/action-kanpo/feed.xml" rel="self" type="application/rss+xml"/>
     <language>ja</language>
     <image>
@@ -17,6 +17,50 @@
         <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
         <link>https://www.kanpo.go.jp</link>
     </image>
+    
+    <item>
+    <title><![CDATA[令和7年7月18日（本紙　第1510号）]]></title>
+    <description><![CDATA[令和7年7月18日（本紙　第1510号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250718/20250718h01510/pdf/20250718h01510full00010032.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250718/20250718h01510/pdf/20250718h01510full00010032.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250718/20250718h01510/pdf/20250718h01510full00010032.pdf</guid>
+    <pubDate>2025-07-17 23:47:43 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月18日（号外　第165号）]]></title>
+    <description><![CDATA[令和7年7月18日（号外　第165号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250718/20250718g00165/pdf/20250718g00165full00010088.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250718/20250718g00165/pdf/20250718g00165full00010088.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250718/20250718g00165/pdf/20250718g00165full00010088.pdf</guid>
+    <pubDate>2025-07-17 23:47:43 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月18日（号外　第166号）]]></title>
+    <description><![CDATA[令和7年7月18日（号外　第166号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250718/20250718g00166/pdf/20250718g00166full00010160.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250718/20250718g00166/pdf/20250718g00166full00010160.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250718/20250718g00166/pdf/20250718g00166full00010160.pdf</guid>
+    <pubDate>2025-07-17 23:47:43 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月18日（政府調達　第133号）]]></title>
+    <description><![CDATA[令和7年7月18日（政府調達　第133号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250718/20250718c00133/pdf/20250718c00133full00010056.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250718/20250718c00133/pdf/20250718c00133full00010056.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250718/20250718c00133/pdf/20250718c00133full00010056.pdf</guid>
+    <pubDate>2025-07-17 23:47:43 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
     
     <item>
     <title><![CDATA[令和7年7月17日（本紙　第1509号）]]></title>
