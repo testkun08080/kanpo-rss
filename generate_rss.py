@@ -58,7 +58,7 @@ def make_item(pdf_info):
     """
 
     title = pdf_info["name"]
-    date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S GMT")
+    date = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     # short_url = shorten_url(pdf_info["url"])
     link_url = pdf_info["url"]

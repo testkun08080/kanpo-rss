@@ -24,7 +24,7 @@ def make_item(page_title, toc_info):
             - "url": '目次に該当するページのurl'}
     """
 
-    date = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S GMT")
+    date = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     # short_url = shorten_url(pdf_info["url"])
     link_url = toc_info["url"]
