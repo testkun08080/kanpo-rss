@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss version="2.0"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+    <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
+    <link>https://www.kanpo.go.jp</link>
+    <description>これは官報の非公式更新通知RSSです。基本的に毎日8:35分ごろに更新内容を確認して、RSSをプッシュします/</description>
+    <generator>testkun08080</generator>
+    <lastBuildDate>Mon, 21 Jul 2025 23:47:44 GMT</lastBuildDate>
+    <atom:link href="https://testkun08080.github.io/action-kanpo/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>ja</language>
+    <image>
+        <url>https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png</url>
+        <title><![CDATA[ 官報RSS(非公式)フィード ]]></title>
+        <link>https://www.kanpo.go.jp</link>
+    </image>
+    
+    <item>
+    <title><![CDATA[令和7年7月22日（本紙　第1511号）]]></title>
+    <description><![CDATA[令和7年7月22日（本紙　第1511号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250722/20250722h01511/pdf/20250722h01511full00010032.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250722/20250722h01511/pdf/20250722h01511full00010032.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250722/20250722h01511/pdf/20250722h01511full00010032.pdf</guid>
+    <pubDate>Mon, 21 Jul 2025 23:47:44 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月22日（号外　第167号）]]></title>
+    <description><![CDATA[令和7年7月22日（号外　第167号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250722/20250722g00167/pdf/20250722g00167full00010224.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250722/20250722g00167/pdf/20250722g00167full00010224.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250722/20250722g00167/pdf/20250722g00167full00010224.pdf</guid>
+    <pubDate>Mon, 21 Jul 2025 23:47:44 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    <item>
+    <title><![CDATA[令和7年7月22日（政府調達　第134号）]]></title>
+    <description><![CDATA[令和7年7月22日（政府調達　第134号）が発行されました。
+リンクはこちら:https://www.kanpo.go.jp/20250722/20250722c00134/pdf/20250722c00134full00010120.pdf]]></description>
+    <link>https://www.kanpo.go.jp/20250722/20250722c00134/pdf/20250722c00134full00010120.pdf</link>
+    <guid isPermaLink="true">https://www.kanpo.go.jp/20250722/20250722c00134/pdf/20250722c00134full00010120.pdf</guid>
+    <pubDate>Mon, 21 Jul 2025 23:47:44 GMT</pubDate>
+    <dc:creator>https://www.kanpo.go.jp</dc:creator>
+    <enclosure url="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png" length="0" type="image/png"/>
+    </item>
+    
+    </channel>
+    </rss>
+    
