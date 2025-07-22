@@ -2,7 +2,7 @@ name: 官報RSS生成
 
 on:
   schedule:
-    - cron: "30 23 * * *" # JST 8:35 に実行 (遅延を考慮して、30分に設定)
+    - cron: "30 23 * * *" # JST 8:30 に実行 (遅延を考慮して、30分に設定)
   workflow_dispatch:
 
 jobs:
