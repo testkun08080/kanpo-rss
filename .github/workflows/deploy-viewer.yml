@@ -2,7 +2,7 @@ name: Deploy Kanpo RSS Viewer
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -24,8 +24,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
           cache-dependency-path: kanpo-viewer/package-lock.json
 
       - name: Install dependencies
@@ -37,7 +37,6 @@ jobs:
         run: |
           cp rss_data.json kanpo-viewer/public/
           cp rss_toc_data.json kanpo-viewer/public/
-          cp images/logo.png kanpo-viewer/public/
 
       - name: Build
         run: |
@@ -50,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: "./docs"
 
   deploy:
     environment:
