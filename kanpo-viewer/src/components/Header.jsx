@@ -5,9 +5,9 @@ function Header() {
         <div className="flex-1">
           <div className="flex items-center gap-3">
             <img
-              src="/logo.png"
+              src="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png"
               alt="官報ロゴ"
-              className="w-10 h-10 rounded-lg"
+              className="object-contain w-10 h-10 rounded-lg"
             />
             <div>
               <h1 className="text-xl font-bold">官報RSS Viewer</h1>
