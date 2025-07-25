@@ -6,7 +6,7 @@ function RSSFeedList({ data, viewMode }) {
   const [sortBy, setSortBy] = useState('date') // 'date' or 'title'
   const [sortOrder, setSortOrder] = useState('desc') // 'asc' or 'desc'
   const [currentPage, setCurrentPage] = useState(1)
-  const [selectedTag, setSelectedTag] = useState('')
+  const [selectedTags, setSelectedTags] = useState([])
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
   const itemsPerPage = 10
@@ -32,15 +32,32 @@ function RSSFeedList({ data, viewMode }) {
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // タグフィルタリング
-    const matchesTag = selectedTag ? getItemType(item.title) === selectedTag : true;
+    // タグフィルタリング（複数選択対応）
+    const matchesTags = selectedTags.length === 0 ? true : selectedTags.includes(getItemType(item.title));
     
     // 日付フィルタリング
     const itemDate = new Date(item.pub_date);
-    const matchesStartDate = startDate ? itemDate >= new Date(startDate) : true;
-    const matchesEndDate = endDate ? itemDate <= new Date(endDate) : true;
+    // 日付を時刻なしで比較するために日付部分だけを取得
+    const itemDateOnly = new Date(itemDate.getFullYear(), itemDate.getMonth(), itemDate.getDate());
     
-    return matchesSearch && matchesTag && matchesStartDate && matchesEndDate;
+    let startDateObj = null;
+    if (startDate) {
+      startDateObj = new Date(startDate);
+      // 開始日の0時0分0秒に設定
+      startDateObj = new Date(startDateObj.getFullYear(), startDateObj.getMonth(), startDateObj.getDate());
+    }
+    
+    let endDateObj = null;
+    if (endDate) {
+      endDateObj = new Date(endDate);
+      // 終了日の23時59分59秒に設定（その日の終わりまで含める）
+      endDateObj = new Date(endDateObj.getFullYear(), endDateObj.getMonth(), endDateObj.getDate(), 23, 59, 59);
+    }
+    
+    const matchesStartDate = startDate ? itemDate >= startDateObj : true;
+    const matchesEndDate = endDate ? itemDate <= endDateObj : true;
+    
+    return matchesSearch && matchesTags && matchesStartDate && matchesEndDate;
   })
 
   // ソート
@@ -125,24 +142,33 @@ function RSSFeedList({ data, viewMode }) {
           <div className="divider my-2"></div>
           
           <div className="flex flex-col md:flex-row gap-4">
-            {/* タグフィルター */}
+            {/* タグフィルター（複数選択） */}
             <div className="flex-1">
               <label className="label">
-                <span className="label-text">🏷️ タグでフィルター</span>
+                <span className="label-text">🏷️ タグでフィルター（複数選択可）</span>
               </label>
-              <select
-                className="select select-bordered w-full"
-                value={selectedTag}
-                onChange={(e) => {
-                  setSelectedTag(e.target.value)
-                  setCurrentPage(1)
-                }}
-              >
-                <option value="">すべてのタグ</option>
+              <div className="flex flex-wrap gap-2 p-2 border rounded-lg bg-base-100">
                 {availableTags.map(tag => (
-                  <option key={tag} value={tag}>{tag}</option>
+                  <div key={tag} className="form-control">
+                    <label className="cursor-pointer label gap-2">
+                      <input
+                        type="checkbox"
+                        className="checkbox checkbox-primary checkbox-sm"
+                        checked={selectedTags.includes(tag)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedTags([...selectedTags, tag]);
+                          } else {
+                            setSelectedTags(selectedTags.filter(t => t !== tag));
+                          }
+                          setCurrentPage(1);
+                        }}
+                      />
+                      <span className="label-text">{tag}</span>
+                    </label>
+                  </div>
                 ))}
-              </select>
+              </div>
             </div>
             
             {/* 日付フィルター */}
@@ -183,12 +209,12 @@ function RSSFeedList({ data, viewMode }) {
               {viewMode === 'simple' ? '簡易版' : '詳細版'} - 
               全{data.length}件中 {filteredData.length}件を表示
             </div>
-            {(searchTerm || selectedTag || startDate || endDate) && (
+            {(searchTerm || selectedTags.length > 0 || startDate || endDate) && (
               <button
                 className="btn btn-ghost btn-sm"
                 onClick={() => {
                   setSearchTerm('')
-                  setSelectedTag('')
+                  setSelectedTags([])
                   setStartDate('')
                   setEndDate('')
                   setCurrentPage(1)
