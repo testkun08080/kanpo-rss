@@ -44,11 +44,11 @@ function RSSItem({ item, viewMode }) {
               </div>
             </div>
 
-            <h3 className="card-title text-lg mb-3 leading-relaxed">
+            <h3 className="card-title text-lg mb-3 leading-relaxed break-words overflow-hidden">
               {item.title}
             </h3>
 
-            <p className="text-base-content/80 mb-4 leading-relaxed">
+            <p className="text-base-content/80 mb-4 leading-relaxed break-words overflow-hidden">
               {item.description}
             </p>
 
