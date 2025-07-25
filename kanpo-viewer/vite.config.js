@@ -12,5 +12,13 @@ export default defineConfig({
   build: {
     outDir: '../docs',
     emptyOutDir: true,
+  },
+  server: {
+    host: true,
+    cors: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    allowedHosts: true
   }
 })

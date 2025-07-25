@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import RSSItem from './RSSItem'
 
 function RSSFeedList({ data, viewMode }) {
@@ -6,13 +6,59 @@ function RSSFeedList({ data, viewMode }) {
   const [sortBy, setSortBy] = useState('date') // 'date' or 'title'
   const [sortOrder, setSortOrder] = useState('desc') // 'asc' or 'desc'
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedTags, setSelectedTags] = useState([])
+  const [startDate, setStartDate] = useState('')
+  const [endDate, setEndDate] = useState('')
   const itemsPerPage = 10
 
+  // タグの種類を抽出
+  const getItemType = (title) => {
+    if (title.includes("本紙")) return "本紙";
+    if (title.includes("号外")) return "号外";
+    if (title.includes("政府調達")) return "政府調達";
+    if (title.includes("告示")) return "告示";
+    if (title.includes("政令")) return "政令";
+    if (title.includes("省令")) return "省令";
+    return "その他";
+  };
+
+  // 利用可能なタグを取得
+  const availableTags = [...new Set(data.map(item => getItemType(item.title)))];
+
   // フィルタリング
-  const filteredData = data.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  const filteredData = data.filter(item => {
+    // テキスト検索
+    const matchesSearch = 
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    // タグフィルタリング（複数選択対応）
+    const matchesTags = selectedTags.length === 0 ? true : selectedTags.includes(getItemType(item.title));
+    
+    // 日付フィルタリング
+    const itemDate = new Date(item.pub_date);
+    // 日付を時刻なしで比較するために日付部分だけを取得
+    const itemDateOnly = new Date(itemDate.getFullYear(), itemDate.getMonth(), itemDate.getDate());
+    
+    let startDateObj = null;
+    if (startDate) {
+      startDateObj = new Date(startDate);
+      // 開始日の0時0分0秒に設定
+      startDateObj = new Date(startDateObj.getFullYear(), startDateObj.getMonth(), startDateObj.getDate());
+    }
+    
+    let endDateObj = null;
+    if (endDate) {
+      endDateObj = new Date(endDate);
+      // 終了日の23時59分59秒に設定（その日の終わりまで含める）
+      endDateObj = new Date(endDateObj.getFullYear(), endDateObj.getMonth(), endDateObj.getDate(), 23, 59, 59);
+    }
+    
+    const matchesStartDate = startDate ? itemDate >= startDateObj : true;
+    const matchesEndDate = endDate ? itemDate <= endDateObj : true;
+    
+    return matchesSearch && matchesTags && matchesStartDate && matchesEndDate;
+  })
 
   // ソート
   const sortedData = [...filteredData].sort((a, b) => {
@@ -92,21 +138,89 @@ function RSSFeedList({ data, viewMode }) {
               </div>
             </div>
           </div>
+
+          <div className="divider my-2"></div>
+          
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* タグフィルター（複数選択） */}
+            <div className="flex-1">
+              <label className="label">
+                <span className="label-text">🏷️ タグでフィルター（複数選択可）</span>
+              </label>
+              <div className="flex flex-wrap gap-2 p-2 border rounded-lg bg-base-100">
+                {availableTags.map(tag => (
+                  <div key={tag} className="form-control">
+                    <label className="cursor-pointer label gap-2">
+                      <input
+                        type="checkbox"
+                        className="checkbox checkbox-primary checkbox-sm"
+                        checked={selectedTags.includes(tag)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedTags([...selectedTags, tag]);
+                          } else {
+                            setSelectedTags(selectedTags.filter(t => t !== tag));
+                          }
+                          setCurrentPage(1);
+                        }}
+                      />
+                      <span className="label-text">{tag}</span>
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* 日付フィルター */}
+            <div className="flex-1">
+              <label className="label">
+                <span className="label-text">📅 期間でフィルター</span>
+              </label>
+              <div className="flex gap-2">
+                <div className="flex-1">
+                  <input
+                    type="date"
+                    className="input input-bordered w-full"
+                    value={startDate}
+                    onChange={(e) => {
+                      setStartDate(e.target.value)
+                      setCurrentPage(1)
+                    }}
+                  />
+                </div>
+                <span className="self-center">～</span>
+                <div className="flex-1">
+                  <input
+                    type="date"
+                    className="input input-bordered w-full"
+                    value={endDate}
+                    onChange={(e) => {
+                      setEndDate(e.target.value)
+                      setCurrentPage(1)
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           
           <div className="flex justify-between items-center mt-4">
             <div className="text-sm opacity-70">
               {viewMode === 'simple' ? '簡易版' : '詳細版'} - 
               全{data.length}件中 {filteredData.length}件を表示
             </div>
-            {searchTerm && (
+            {(searchTerm || selectedTags.length > 0 || startDate || endDate) && (
               <button
                 className="btn btn-ghost btn-sm"
                 onClick={() => {
                   setSearchTerm('')
+                  setSelectedTags([])
+                  setStartDate('')
+                  setEndDate('')
                   setCurrentPage(1)
                 }}
               >
-                ✕ 検索をクリア
+                ✕ フィルターをクリア
               </button>
             )}
           </div>
