@@ -3,7 +3,7 @@ function Header() {
     <header className="navbar bg-primary text-primary-content shadow-lg">
       <div className="container mx-auto">
         <div className="flex-1">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <a href="/kanpo-rss/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img
               src="https://raw.githubusercontent.com/testkun08080/kanpo-rss/refs/heads/main/images/logo.png"
               alt="官報ロゴ"
