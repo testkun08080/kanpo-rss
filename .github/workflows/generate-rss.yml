@@ -3,7 +3,6 @@ name: 官報RSS生成
 on:
   schedule:
     - cron: "*/10 * * * *"
-    # 毎日午前8
     - cron: "22 23 * * *"
   workflow_dispatch:
 
